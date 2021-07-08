@@ -18,7 +18,6 @@ const getCurrentMonth = () =>{
 // Current Day
 const getCurrentDay = () =>{
     const day = new Date().getDate();
-    console.log(day);
     if(day < 10){
         return `0${day}`;
     }else{
