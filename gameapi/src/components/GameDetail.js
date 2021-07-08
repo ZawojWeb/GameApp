@@ -10,26 +10,26 @@ const GameDetail = () => {
         <CardShadow>
             <Detail className="card-shaodw">
                 <div className="detail">
-                    <div className="stats">
+                    <Stats className="stats">
                         <div className="rating">
                             <h3>{game.name}</h3>
                             <p>Rating : {game.rating}</p>
                         </div>
-                        <div className="info">
+                        <Info className="info">
                             <h3>Platforms</h3>
-                            <div className="platforms">
+                            <Platforms className="platforms">
                                 { (game.platforms)?.map(data =>(
                                     <h3 key={data.platform.id}>{data.platform.name}</h3>
                                 ))}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="media">
+                            </Platforms>
+                        </Info>
+                    </Stats>
+                    <Media className="media">
                         <img src={game.background_image} alt="image" />
-                    </div>
-                    <div className="description">
+                    </Media>
+                    <Desctiption className="description">
                         <p>{game.description_raw}</p>
-                    </div>
+                    </Desctiption>
                     <div className="gallery">
                         {(screenShot.results)?.map(screen => (
                             <img key={screen.id} src={screen.image} alt="" />
@@ -73,5 +73,32 @@ const Detail = styled(motion.div)`
         width: 100%;
     }
 `
+const Stats = styled(motion.div)`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+const Info = styled(motion.div)`
+    text-align: center;
+`
 
+const Platforms = styled(motion.div)`
+    display: flex;
+    justify-content: space-evenly;
+    img{
+        margin-left: 1rem;
+    }
+`
+
+const Media = styled(motion.div)`
+    margin-top: 5rem;
+    img{
+        width: 100%;
+       
+    }
+`
+
+const Desctiption = styled(motion.div)`
+    margin: 5rem 0rem;
+`
 export default GameDetail
