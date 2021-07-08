@@ -49,7 +49,13 @@ text-align: center;
         outline: none;
     }
     button{
-        
+        font-size: 1.5rem;
+        border: none;
+        padding: 0.5rem 2rem;
+        margin: 1rem;
+        cursor: pointer;
+        background: #ff7675;
+        color: white;
     }
 
 `
