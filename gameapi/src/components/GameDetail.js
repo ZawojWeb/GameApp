@@ -14,6 +14,9 @@ import xbox from '../img/xbox.svg'
 import ps5 from '../img/ps5.svg'
 import xboxS from '../img/xbox-seriesx.svg'
 
+import starEmpty from "../img/star-empty.png"
+import starFull from "../img/star-full.png"
+
 const GameDetail = ({pathId}) => {
     const history = useHistory();
 
@@ -23,6 +26,19 @@ const GameDetail = ({pathId}) => {
             document.body.style.overflow = "auto"
             history.push("/")
         }
+    }
+
+    const getStars = () =>{
+        const stars = [];
+        const raiting = Math.floor(game.rating);
+        for (let i = 0; i < 5; i++) {
+          if(i <= raiting){
+              stars.push(<img alt="star"key={i} src={starFull}/>)
+          }else{
+            stars.push(<img alt="star"key={i} src={starEmpty}/>)
+          } 
+        }
+        return stars;
     }
     const getPlatfromIcon = (platform) =>{
         switch(platform){
@@ -57,6 +73,9 @@ const GameDetail = ({pathId}) => {
                         <div className="rating">
                             <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                             <p>Rating : {game.rating}</p>
+                            <div className="imageStar">
+                            {getStars()}
+                            </div>
                         </div>
                         <Info className="info">
                             <h3>Platforms</h3>
@@ -123,6 +142,9 @@ const Stats = styled(motion.div)`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .imageStar{
+        display: flex;
+    }
 `
 const Info = styled(motion.div)`
     text-align: center;
@@ -148,4 +170,6 @@ const Media = styled(motion.div)`
 const Desctiption = styled(motion.div)`
     margin: 5rem 0rem;
 `
+
+
 export default GameDetail
