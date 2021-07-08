@@ -1,5 +1,5 @@
 # GameApp
-Application which get games from API.
+Application which render games from API.
 
 Link of API : https://rawg.io/
 
