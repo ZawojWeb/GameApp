@@ -4,7 +4,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import {loadGames} from '../actions/gameAction'
 import Game from '../components/game'
 import styled from 'styled-components'
-import {motion, AnimatePresence} from 'framer-motion'
+import {motion, AnimatePresence,AnimateSharedLayout} from 'framer-motion'
 import { useLocation } from 'react-router-dom';
 
 const Home = () =>{
@@ -21,8 +21,8 @@ const Home = () =>{
     const {popular,newGame,upComing} = useSelector(state => state.games)
     return(
         <GameList>
-            
-            <AnimatePresence>{pathId && <GameDetail></GameDetail>}</AnimatePresence>
+            <AnimateSharedLayout type="crossfade">
+            <AnimatePresence>{pathId && <GameDetail pathId={pathId} />}</AnimatePresence>
             <h2>Upcoming Games</h2>
             <Games>
                 {upComing.map((game)=>(
@@ -41,7 +41,7 @@ const Home = () =>{
                     <Game name={game.name} released={game.released} id={game.id} image={game.background_image} key={game.id}/>
                 ))}
             </Games>
-            
+            </AnimateSharedLayout>
         </GameList>
     );
 }
