@@ -5,8 +5,10 @@ import {useSelector} from 'react-redux'
 
 const GameDetail = () => {
 
-    const {screenShot,game} = useSelector(state => state.detail)
+    const {screenShot,game, isLoading} = useSelector(state => state.detail)
     return (
+        <>
+        {!isLoading && (
         <CardShadow>
             <Detail className="card-shaodw">
                 <div className="detail">
@@ -38,6 +40,8 @@ const GameDetail = () => {
                 </div>
             </Detail>
         </CardShadow>
+        )}
+        </>
     )
 };
 
