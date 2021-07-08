@@ -144,6 +144,10 @@ const Stats = styled(motion.div)`
     align-items: center;
     .imageStar{
         display: flex;
+        img{
+            width: 26px;
+            height: 26px;
+        }
     }
 `
 const Info = styled(motion.div)`
