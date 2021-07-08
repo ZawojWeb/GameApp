@@ -5,6 +5,15 @@ import {useSelector} from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { smallImage } from '../util'
 
+import playstation from '../img/playstation.svg'
+import apple from '../img/apple.svg'
+import gamepad from '../img/gamepad.svg'
+import nintendo from '../img/nintendo.svg'
+import steam from '../img/steam.svg'
+import xbox from '../img/xbox.svg'
+import ps5 from '../img/ps5.svg'
+import xboxS from '../img/xbox-seriesx.svg'
+
 const GameDetail = ({pathId}) => {
     const history = useHistory();
 
@@ -14,6 +23,27 @@ const GameDetail = ({pathId}) => {
             document.body.style.overflow = "auto"
             history.push("/")
         }
+    }
+    const getPlatfromIcon = (platform) =>{
+        switch(platform){
+            case "PlayStation 4":
+                return playstation;
+            case "Xbox One":
+                return xbox;
+            case "PC":
+                return steam;
+            case "Xbox Series S/X":
+                return xboxS;
+            case "Nintendo Switch":
+                return nintendo;
+            case "PlayStation 5":
+                return ps5;
+            case "iOS":
+                return apple;
+            default:
+                return gamepad;
+        }
+
     }
 
     const {screenShot,game, isLoading} = useSelector(state => state.detail)
@@ -32,7 +62,7 @@ const GameDetail = ({pathId}) => {
                             <h3>Platforms</h3>
                             <Platforms className="platforms">
                                 { (game.platforms)?.map(data =>(
-                                    <h3 key={data.platform.id}>{data.platform.name}</h3>
+                                    <img key={data.platform.id}src={getPlatfromIcon(data.platform.name)}></img>
                                 ))}
                             </Platforms>
                         </Info>
@@ -103,6 +133,7 @@ const Platforms = styled(motion.div)`
     justify-content: space-evenly;
     img{
         margin-left: 1rem;
+        max-width: 48px;
     }
 `
 
