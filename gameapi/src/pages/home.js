@@ -18,11 +18,25 @@ const Home = () =>{
       dispatch(loadGames());
     },[dispatch])
 
-    const {popular,newGame,upComing} = useSelector(state => state.games)
+    const {popular,newGame,upComing, searched} = useSelector(state => state.games)
+    const clearSearched = () =>{
+        dispatch({type:"CLEAR_SEARCH"})
+    }
     return(
         <GameList>
             <AnimateSharedLayout type="crossfade">
             <AnimatePresence>{pathId && <GameDetail pathId={pathId} />}</AnimatePresence>
+            {searched.length ? (
+            <div className="searched">
+                <h2>Searched Games:</h2>
+                <ClearButon onClick={clearSearched}>Clear Serch</ClearButon>
+                <Games>
+                    {searched.map((game)=>(
+                        <Game name={game.name} released={game.released} id={game.id} image={game.background_image} key={game.id}/>
+                    ))}
+                </Games>
+            </div>
+            ) : ('')}
             <h2>Upcoming Games</h2>
             <Games>
                 {upComing.map((game)=>(
@@ -60,5 +74,19 @@ const Games = styled(motion.div)`
     grid-template-columns: repeat(auto-fit, minmax(500px,1fr));
     grid-column-gap: 1rem;
     grid-row-gap: 5rem;
+`
+const ClearButon = styled(motion.div)`
+        font-size: 1.5rem;
+        border: none;
+        padding: 0.5rem 2rem;
+        margin: 1rem;
+        text-align: center;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5rem;
+        cursor: pointer;
+        background: #ff7675;
+        color: white;
 `
 export default Home
