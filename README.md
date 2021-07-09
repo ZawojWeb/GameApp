@@ -5,4 +5,4 @@ Link of API : https://rawg.io/
 
 The app have also search method.
 
-Live link is here: http://games.zawojweb.com/ (It's posible that dosen't exist any more)
+Live link is here: https://zawojweb.com/game/58386 (It's posible that dosen't exist any more)
