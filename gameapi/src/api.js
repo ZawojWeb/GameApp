@@ -1,6 +1,6 @@
 // Base URL
 const base_url = "https://api.rawg.io/api/"
-const key = `key=${process.env.KEY_API}`
+const key = `key=${process.env.REACT_APP_KEY_API}`
 
 // Popular Games
 const popular_games = "https://api.rawg.io/api/games"
@@ -11,7 +11,7 @@ const getCurrentMonth = () =>{
     const month = new Date().getMonth() +1;
     if(month < 10){
         return `0${month}`;
-        
+
     }else{
         return month;
     }
