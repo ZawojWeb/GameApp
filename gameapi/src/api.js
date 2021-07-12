@@ -1,6 +1,6 @@
 // Base URL
 const base_url = "https://api.rawg.io/api/"
-const key = "key=8459fcb016544f55980b9950d4d11e48"
+const key = `key=${process.env.KEY_API}`
 
 // Popular Games
 const popular_games = "https://api.rawg.io/api/games"
