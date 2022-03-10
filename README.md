@@ -13,7 +13,7 @@
     App where you can search games
     <br />
     <br />
-    <a href="https://games.zawojweb.com/">View Demo</a>
+    <a href="https://game-app-3mptu.ondigitalocean.app/">View Demo</a>
     ·
     <a href="https://github.com/ZawojWeb/GameApp">Report Bug</a>
   </p>
