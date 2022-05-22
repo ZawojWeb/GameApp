@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/zawojweb/GameApp">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="Logo.png" alt="Logo" width="218" height="80">
   </a>
 
 <h3 align="center">Game App</h3>
