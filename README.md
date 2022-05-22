@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/zawojweb/GameApp">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -13,7 +13,7 @@
     App where you can search games
     <br />
     <br />
-    <a href="https://game-app-3mptu.ondigitalocean.app/">View Demo</a>
+    <a href="https://gameapp.zawojweb.com/">View Demo</a>
     ·
     <a href="https://github.com/ZawojWeb/GameApp">Report Bug</a>
   </p>
